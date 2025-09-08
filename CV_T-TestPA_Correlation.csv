@@ -1,0 +1,6 @@
+Component,t-statistic,p-value,Statistically Significant?
+Constriction_Ratio,-1.6318599504845182,0.10411909206746674,Fail to reject the null hypothesis: There is not a significant difference between the group means.
+Culvert_Length,1.9319330057332225,0.054477496334398,Fail to reject the null hypothesis: There is not a significant difference between the group means.
+Culvert_Width,1.2222954708635232,0.22282032042205863,Fail to reject the null hypothesis: There is not a significant difference between the group means.
+Culvert_Slope,0.6247207397882029,0.5327130176036772,Fail to reject the null hypothesis: There is not a significant difference between the group means.
+Drainage_Area,0.7154378709272359,0.4749989110078998,Fail to reject the null hypothesis: There is not a significant difference between the group means.
