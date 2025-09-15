@@ -19,7 +19,6 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.ensemble import BaggingRegressor
 
 # Accuracy tests and other misc
 from sklearn.model_selection import train_test_split
@@ -30,7 +29,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.preprocessing import OneHotEncoder
 
 ## Import dataset and subset it
-root_df = pd.read_csv('Desktop/THESIS/Root_Python.csv')
+root_df = pd.read_csv('Downloads/Root_Python.csv')
 
 root_df_subset = root_df[['Culvert_Length', 'Culvert_Height', 'Constriction_Ratio', 'RR_Culvert_Slope', 'Culvert_Width', 'Scour_Pool_DS_', 'Culvert_Shape', 'Culvert_Material']]
 
@@ -282,4 +281,6 @@ NOTES
 - For initial CART test - match rf parameters
 - Test other types of ensembles? (boosting?)
 - Accuracy is better without shape taken into account
+- SHOULD THE DATA BE LOG TRANSFORMED
+- Try voting classifier?
 """

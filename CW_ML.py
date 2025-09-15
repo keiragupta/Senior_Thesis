@@ -31,7 +31,7 @@ from sklearn.preprocessing import OneHotEncoder
 ### DATA PRE-PROCESSING
 
 # Import dataset and subset it to necessary columns
-cw_df = pd.read_csv('Desktop/THESIS/CW_Python.csv')
+cw_df = pd.read_csv('Downloads/CW_Python.csv')
 
 cw_df_subset = cw_df[['Pipe_length_Thalweg', 'DRNAREA_SQ_Miles', 'Constriction_Ratio', 'Culvert_Slope', 'Width_Span_P1', 'scour_pool', 'Corrugated Metal?', 'Circular?', 'Outlet_Water_Depth']]
 
@@ -59,7 +59,7 @@ cw_df_subset = cw_df_subset.dropna()
 
 # Establish seed for random state (ensures reproducibility)
 SEED = 42
-
+"""
 ### MODEL 1: CLASSIFICATION MODEL FOR SCOUR PRESENCE/ABSENCE
 
 ## Split dataset
@@ -108,7 +108,7 @@ y_pred = rf.predict(X_test)
 rf_acc = accuracy_score(y_pred, y_test)
 
 print(f'RF Accuracy: {rf_acc}')
-"""
+
 ## Hyperparameter tuning for Random Forest Model
 
 # Print current hyperparameters
@@ -136,7 +136,7 @@ acc = accuracy_score(y_test, y_pred)
 print(f'Best hyperparameters: {best_hyp}')
 print(f'Test set accuracy of rf: {acc}')
 # These hyperparameters were put into the Random Forest model above
-"""
+
 ## Create a graph of feature importances
 # Random Forest Models give each feature a different "weight" (or importance) - this graph helps visualize which features are prioritized
 
@@ -157,12 +157,13 @@ plt.show()
 
 ## Data Pre-Processing
 # Create another df subset, this time with lateral scour width instead of scour pool presence/absence (indexing a different column)
-cw_df_subset1 = cw_df[['Pipe_length_Thalweg', 'DRNAREA_SQ_Miles', 'Constriction_Ratio', 'Culvert_Slope', 'Width_Span_P1', 'scour_pool_width', 'Outlet_Water_Depth', 'Circular?', 'Corrugated Metal?']]
+cw_df_subset1 = cw_df[['Pipe_length_Thalweg', 'DRNAREA_SQ_Miles', 'Constriction_Ratio', 'Culvert_Slope', 'Width_Span_P1', 'scour_pool', 'scour_pool_width', 'Outlet_Water_Depth', 'Circular?', 'Corrugated Metal?']]
 
 # Encode Scour Pool DS? column as 1 = Yes and 0 = No
 #cw_df_subset1['Concrete?'] = cw_df_subset1['Concrete?'].apply(lambda val: 1 if val == 'Y' else 0)
 cw_df_subset1['Corrugated Metal?'] = cw_df_subset1['Corrugated Metal?'].apply(lambda val: 1 if val == 'Y' else 0)
 cw_df_subset1['Circular?'] = cw_df_subset1['Circular?'].apply(lambda val: 1 if val == 'Y' else 0)
+cw_df_subset1['scour_pool'] = cw_df_subset1['scour_pool'].apply(lambda val: 1 if val == 'Yes' else 0)
 
 ## Use One Hot Encoding for Culvert Material (categorical -> numerical data)
 # Create an instance of OneHotEncoder
@@ -275,7 +276,7 @@ rmse = mse ** (1/2)
 print(f'Best hyperparameters: {best_hyp_reg}')
 print(f'Test set RMSE of rf: {rmse}')
 # These hyperparameters were applied to the Random Forest model above
-"""
+
 
 """
 NOTES
