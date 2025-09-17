@@ -18,7 +18,7 @@ from scipy.stats import chi2_contingency
 
 ### DATA PRE-PROCESSING
 # Import Crow Wing River Dataset
-cw_df = pd.read_csv('Downloads/CW_Python.csv')
+cw_df = pd.read_csv('Desktop/THESIS/CW_Python.csv')
 
 # Subset dataset to only necessary columns
 cw_df_subset = cw_df[['DRNAREA_SQ_Miles', 'scour_pool', 'scour_pool_width', 'Width_Span_P1', 'Constriction_Ratio', 'Pipe_length_Thalweg', 'Culvert_Slope', 'Culvert_material_Thalweg']]

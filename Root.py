@@ -17,7 +17,7 @@ from scipy.stats import chi2_contingency
 
 ### DATA PRE-PROCESSING
 # Import Root River Dataset
-root_df = pd.read_csv('Downloads/Root_Python.csv')
+root_df = pd.read_csv('Desktop/THESIS/Root_Python.csv')
 
 # Subset dataset to only necessary columns
 root_df_subset = root_df[['Culvert_Length', 'Culvert_Height', 'Constriction_Ratio', 'RR_Culvert_Slope', 'Culvert_Width', 'Lateral_Scour_DS', 'Scour_Pool_DS_', 'Culvert_Material']]
